@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product - Shoptide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">Shoptide</div>
+</header>
+
+<div class="product-detail">
+  <img id="productImage">
+  <h2 id="productName"></h2>
+  <p id="productPrice"></p>
+
+  <button id="addBtn">Add to Cart</button>
+  <button id="buyBtn">Buy Now</button>
+</div>
+
+<script src="script.js"></script>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+
+const product = products.find(p => p.name === name);
+
+if (product) {
+  document.getElementById("productName").innerText = product.name;
+  document.getElementById("productPrice").innerText = "₦" + product.price;
+  document.getElementById("productImage").src = product.image;
+
+  document.getElementById("addBtn").onclick = () => addToCart(product.name);
+  document.getElementById("buyBtn").onclick = () => buyNow(product.name);
+}
+</script>
+
+</body>
+</html>

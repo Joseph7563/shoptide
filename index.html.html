@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shoptide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">🛒 Shoptide</div>
+
+  <div>
+    <a href="vendor.html">Become a Vendor</a>
+    <button onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Welcome to Shoptide</h1>
+  <p>Your trusted marketplace</p>
+</section>
+
+<section class="categories">
+  <h2>Shop by Category</h2>
+
+  <div class="category-list">
+    <button onclick="filterCategory('all')">All</button>
+    <button onclick="filterCategory('Electronics')">Electronics</button>
+    <button onclick="filterCategory('Fashion')">Fashion</button>
+  </div>
+</section>
+
+<section class="products" id="productGrid"></section>
+
+<div id="cartSidebar" class="cart-sidebar">
+  <h2>Your Cart</h2>
+  <ul id="cartItems"></ul>
+  <button onclick="checkout()">Checkout via WhatsApp</button>
+  <button onclick="toggleCart()">Close</button>
+</div>
+
+<div class="whatsapp-btn" onclick="openWhatsApp()">💬 Chat</div>
+
+<footer>
+  <p>© 2026 Shoptide</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
